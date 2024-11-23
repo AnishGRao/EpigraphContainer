@@ -5,7 +5,7 @@ docker build --file Dockerfile --output out .
 
 export LD_LIBRARY_PATH=$(pwd)/out/Epigraph/build/solvers/osqp/out/:$(pwd)/out/Epigraph/build/solvers/ecos/:$(pwd)/out/Epigraph/build/:$(pwd)/out/Epigraph/build/solvers/osqp/lin_sys/direct/qdldl/qdldl_sources/out
 
-g++-8 -std=c++17 -Dosqp_EXPORTS \
+g++ -std=c++17 -Dosqp_EXPORTS \
     -DENABLE_ECOS=TRUE \
     -DENABLE_OSQP=TRUE \
     -I out/Epigraph/solvers/ecos/include/ \
